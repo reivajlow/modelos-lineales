@@ -1,0 +1,26 @@
+function [x2] = Fallosupuesto(b,n,s)
+%--------------------------------------------------------------------------
+% PROPOSITO: visualizar graficamente lo ocurrido al no cumplir los
+% supuestos
+%--------------------------------------------------------------------------
+% INSUMOS  : b  : nx1 vector de parametros
+%            n  : 1x1 numero de iteraciones para la simulacion
+%            s  : 1x1 :supuestos a probar
+%                     1 supuesto 1
+%                     2 supuesto 2
+%                     4 supuesto 4
+%--------------------------------------------------------------------------
+% OUTPUT   : x2 : histograma 
+%--------------------------------------------------------------------------
+
+X = [ones(n,1),rand(n,1)];
+epsilon = unifrnd(0,0.5,n,1);
+y = x'*b+epsilon;
+if s == 1
+    d=2;
+elseif s == 2
+    d=3;
+elseif s == 4
+    
+else
+    error('index out of range')
